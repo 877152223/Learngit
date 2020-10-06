@@ -1,6 +1,8 @@
 language: c
 compiler: clang
 script: 
-- clang -o reader giftcardreaderfixed2.c 
-- ./reader 1 crash1.gft 
-- ./reader 1 crash2.gft
+- clang -o reader giftcardreaderfixed3.c 
+- ./reader 1 cov1.gft 
+- ./reader 1 cov2.fgt
+- ./reader 1 fuzzer1.gft
+- ./reader 1 fuzzer2.gft
