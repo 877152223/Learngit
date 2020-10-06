@@ -3,4 +3,4 @@ compiler: clang
 script: 
 - clang -o reader giftcardreaderfixed2.c 
 - ./reader 1 crash1.gft 
-- ./reader crash2.gft
+- ./reader 1 crash2.gft
