@@ -1,0 +1,6 @@
+One bug is that, if examplegc.num_bytes is a number less than zero, the 
+program will execute malloc(a number less than 0),such as malloc(-116) in 
+line 188.
+
+Another bug is that, the program does not check the bound of the array. In 
+line 30, if arg1 is a number bigger than 16, there will be an exception.  
