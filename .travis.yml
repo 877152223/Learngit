@@ -1,3 +1,3 @@
 language: c
 compiler: clang
-script: clang -o giftcardreader giftcardreaderfixed2.c && ./giftcardreader 1 crash1.gft && ./giftcardreader2 crash2.gft
+script: clang -o giftcardreader giftcardreaderfixed2.c 
