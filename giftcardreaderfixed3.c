@@ -10,7 +10,7 @@
 #include "giftcard.h"
 
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 // interpreter for THX-1138 assembly
 void animate(char *msg, unsigned char *program) {
@@ -28,18 +28,27 @@ void animate(char *msg, unsigned char *program) {
             case 0x00:
                 break;
             case 0x01:
+             printf("001");
                 regs[arg1] = *mptr;
                 break;
             case 0x02:
+            printf("002  arg1 is %d",arg1);
                 *mptr = regs[arg1];
+            printf("*mptr is %d",*mptr);
                 break;
             case 0x03:
                 mptr += (char)arg1;
                 break;
             case 0x04:
+              if(arg2>15){
+                arg2=15;
+            }
                 regs[arg2] = arg1;
                 break;
             case 0x05:
+            if(arg1>15){
+                arg1=15;
+            }
                 regs[arg1] ^= regs[arg2];
                 zf = !regs[arg1];
                 break;
