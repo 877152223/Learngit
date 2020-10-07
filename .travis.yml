@@ -1,7 +1,3 @@
 language: c
 compiler: clang
-script: 
-- clang -o reader giftcardreaderfixed2.c 
-- ./reader 1 crash1.gft 
-- ./reader 1 crash2.gft
-- ./reader 1 hang.gft
+script: make

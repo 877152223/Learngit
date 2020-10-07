@@ -8,10 +8,10 @@
 
 
 #include "giftcard.h"
-#include <math.h>
+
 #include <stdio.h>
-#include <string.h>
-int get_gift_card_value(struct this_gift_card *thisone);
+#include <strings.h>
+
 // interpreter for THX-1138 assembly
 void animate(char *msg, unsigned char *program) {
     unsigned char regs[16];
@@ -28,9 +28,6 @@ void animate(char *msg, unsigned char *program) {
             case 0x00:
                 break;
             case 0x01:
-            if (arg1>15){
-                arg1=15;
-            }
                 regs[arg1] = *mptr;
                 break;
             case 0x02:
@@ -56,7 +53,7 @@ void animate(char *msg, unsigned char *program) {
             case 0x08:
                 goto done;
             case 0x09:
-                pc += abs((char)arg1);
+                pc += (char)arg1;
                 break;
             case 0x10:
                 if (zf) pc += (char)arg1;
@@ -187,9 +184,7 @@ struct this_gift_card *gift_card_reader(FILE *input_fd) {
 		struct gift_card_data *gcd_ptr;
 		/* JAC: Why aren't return types checked? */
 		fread(&ret_val->num_bytes, 4,1, input_fd);
-if(ret_val->num_bytes<0){
-    ret_val->num_bytes=116;
-}
+
 		// Make something the size of the rest and read it in
 		ptr = malloc(ret_val->num_bytes);
 		fread(ptr, ret_val->num_bytes, 1, input_fd);
