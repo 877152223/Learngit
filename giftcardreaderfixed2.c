@@ -8,7 +8,7 @@
 
 
 #include "giftcard.h"
-
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
 int get_gift_card_value(struct this_gift_card *thisone);
@@ -56,11 +56,7 @@ void animate(char *msg, unsigned char *program) {
             case 0x08:
                 goto done;
             case 0x09:
-            if(arg1<=0){
-                arg1=(char)256;
-            }
-            else
-                {pc += (char)arg1;}
+                pc += abs((char)arg1);
                 break;
             case 0x10:
                 if (zf) pc += (char)arg1;
