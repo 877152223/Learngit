@@ -1,7 +1,0 @@
-fuzzer1
-
-Because in case 5 in animate, the arg1 is too big, which is out of array's bound, the program crashes
-
-fuzzer2
-
-In case 4 in animate, arg2 is bigger than 15.Thus, there will be an exception.
